@@ -13,8 +13,8 @@ public class Pong extends JFrame {
 		setTitle(windowTitle);
 		setSize(windowWidth, windowHeight);
 		setResizable(true);
+		add(new PongPanel());
 		setVisible(true);
-		setBackground(Color.BLACK);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	}
@@ -25,8 +25,7 @@ public class Pong extends JFrame {
 	          public void run() {
 	 
 	                 new Pong();
-	                 PongPanel panel = new PongPanel();
-	                 
+
 	            
 	 
 	          }

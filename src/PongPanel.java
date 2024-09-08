@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JPanel;
+import javax.swing.Timer;
+import java.awt.Graphics2D;
 
  public class PongPanel extends JPanel implements ActionListener, KeyListener {
 
@@ -32,17 +34,30 @@ import javax.swing.JPanel;
 		
 	}
 	
-	//	Class Attributes
-	private Color panelColour = Color.BLACK; // Panel Background
-	
-	//	Class Constructor  
-	public PongPanel() {
-		setBackground(panelColour);
-		
+	//	Class Constructor
+		private final static Color BACKGROUND_COLOUR = Color.BLACK;
+
+	private final static int TIMER_DELAY = 5;    
+
+	 public PongPanel() {
+
+	setBackground(BACKGROUND_COLOUR);
+
+	Timer timer = new Timer(TIMER_DELAY, this);
+
+	timer.start();
+	}
+	 
+	 public void update() {
+		 
+	 }
+	 
+	@Override
+	public void paintComponent(Graphics g) {
+	super.paintComponent(g);
+	g.setColor(Color.WHITE);
+	g.fillRect(20, 20, 100, 100);
 	}
 
-
-	
-	
-	
-}
+	}
+	 
